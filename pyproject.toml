@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "online_shoppers_sales_classification"
+version = "0.0.1"
+description = "Clasificacion de sesiones de pagina en linea a partir de si resultaron en una compra o no"
+authors = [
+  { name = "Fernando Arreola Trevi\u00f1o" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.13.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["online_shoppers_sales_classification"]
+include = ["pyproject.toml", "online_shoppers_sales_classification/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["online_shoppers_sales_classification"]
+force-sort-within-sections = true
+
