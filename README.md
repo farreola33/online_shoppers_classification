@@ -4,7 +4,39 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Clasificacion de sesiones de pagina en linea a partir de si resultaron en una compra o no
+Clasificación de sesiones de pagina en linea a partir de si resultaron en una compra. La clasificación se hace mediante
+un RandomForestClassifier de sklearn, y se registra en MLflow. El ejecutable fue probado usando Python 3.13.3.
+
+El proyecto está hecho para ejecutarse usando uv. Se asume en el estado actual del proyecto, que MLflow está corriendo
+localmente en localhost:5000. Una vez se cumpla esta condición, el proyecto se puede ejecutar con el siguiente comando:
+
+```bash
+uv run train.py
+```
+
+Para ver todas las opciones:
+
+```bash
+uv run train.py --help
+```
+
+### Argumentos
+ 
+| Argumento | Tipo | Valor por defecto | Descripción |
+|---|---|---|---|
+| `--file_path` | texto | `./data/raw/online_shoppers_intention.csv` | Ruta del archivo CSV |
+| `--n_estimators` | entero | `100` | Número de árboles |
+| `--min_samples_split` | entero | `5` | Mínimo de muestras para separar un nodo |
+| `--max_depth` | entero | `10` | Profundidad máxima de cada árbol |
+| `--class_weight` | texto | `balanced` | Pesos por clase (`balanced` o `balanced_subsample`) |
+| `--max_leaf_nodes` | entero | sin límite | Máximo de hojas por árbol |
+| `--min_samples_leaf` | entero o decimal | `2` | Entero = número mínimo de muestras en una hoja; decimal (por ejemplo `0.01`) = fracción de las muestras |
+| `--criterion` | `gini`, `entropy`, `log_loss` | `gini` | Función para medir la calidad de una separación |
+| `--random_state` | entero | `42` | Semilla del split y del modelo |
+| `--run_name` | texto | `Random Forest Run` | Nombre de la corrida en MLflow |
+| `--experiment_name` | texto | `Actividad Semana 4` | Experimento de MLflow |
+| `--model_name` | texto | `Online Shoppers Sales Classifier` | Nombre del modelo registrado |
+
 
 ## Project Organization
 

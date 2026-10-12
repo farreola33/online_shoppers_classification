@@ -9,6 +9,16 @@ description = "Clasificacion de sesiones de pagina en linea a partir de si resul
 authors = [
   { name = "Fernando Arreola Trevi\u00f1o" },
 ]
+dependencies = [
+  "mlflow==3.16.0",
+  "numpy==2.5.3",
+  "pandas==3.0.5",
+  "psutil==7.2.2",
+  "scikit-learn==1.9.1",
+  "scipy==1.18.1",
+  "skops==0.14.0",
+  "imbalanced-learn==0.14.2"
+]
 
 readme = "README.md"
 classifiers = [
