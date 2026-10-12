@@ -11,13 +11,13 @@ El proyecto está hecho para ejecutarse usando uv. Se asume en el estado actual 
 localmente en localhost:5000. Una vez se cumpla esta condición, el proyecto se puede ejecutar con el siguiente comando:
 
 ```bash
-uv run train.py
+uv run ./data/raw/train.py
 ```
 
 Para ver todas las opciones:
 
 ```bash
-uv run train.py --help
+uv run ./data/raw/train.py --help
 ```
 
 ### Argumentos
